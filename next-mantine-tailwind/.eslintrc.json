@@ -8,6 +8,7 @@
     "next/core-web-vitals",
     "eslint:recommended",
     "prettier",
+    "plugin:@next/next/recommended",
     "next/babel"
   ],
   "plugins": [
