@@ -176,4 +176,114 @@
      }
      ```
 
+- Prepare Prettier & ESlint
+
+  1. Install Prettier & plugin for Tailwind CSS
+
+     ```bash
+     npm install -D prettier prettier-plugin-tailwindcss
+     ```
+
+  2. Create .prettierrc
+
+     ```bash
+     touch .prettierrc
+     ```
+
+     .prettierrc
+
+     ```json
+     {
+       "singleQuote": false,
+       "semi": true
+     }
+     ```
+
+  3. Solve parsing error: Cannot find module 'next/babel'
+
+     [link](https://zenn.dev/shimotaroo/articles/c8f2e751cd7877)
+
+     .eslintrc
+
+     ```json
+     {
+       "extends": ["next", "next/core-web-vitals", "prettier", "next/babel"]
+     }
+     ```
+
+  4. Install plugins for ESLint
+
+     ```bash
+     npm install -D eslint-config-prettier eslint-plugin-simple-import-sort eslint-plugin-sort-keys-custom-order eslint-plugin-react @typescript-eslint/eslint-plugin eslint-config-next
+     ```
+
+  5. Set the minimum
+
+     .eslintrc.json
+
+     ```json
+     {
+       "env": {
+         "browser": true,
+         "es6": true
+       },
+       "extends": [
+         "next",
+         "next/core-web-vitals",
+         "eslint:recommended",
+         "prettier",
+         "next/babel"
+       ],
+       "plugins": [
+         "react",
+         "@typescript-eslint",
+         "sort-keys-custom-order",
+         "simple-import-sort"
+       ],
+       "rules": {
+         "simple-import-sort/exports": "error",
+         "simple-import-sort/imports": "error",
+         "sort-keys-custom-order/object-keys": [
+           "error",
+           {
+             "orderedKeys": ["id", "name", "title"]
+           }
+         ],
+         "sort-keys-custom-order/type-keys": [
+           "error",
+           {
+             "orderedKeys": ["id", "name", "title"]
+           }
+         ]
+       }
+     }
+     ```
+
+  6. touch .prettierignore
+
+     .prettierignore
+
+     ```
+     node_modules
+     .next
+     yarn.lock
+     package-lock.json
+     public
+     ```
+
+  7. touch .eslintignore
+
+     .eslintignore
+
+     ```plaintext
+     **/node_modules/*
+     **/out/*
+     **/.next/*
+     .eslintrc.json
+     .eslintrc.js
+
+     ```
+
+  8.
+
 -
