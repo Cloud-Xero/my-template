@@ -27,6 +27,8 @@
 
 - Prepare Mantine
 
+  [reference](https://github.com/mantinedev/mantine-minimal-next-template/tree/master)
+
   ```bash
   npm install @mantine/core @mantine/hooks @mantine/next @emotion/server @emotion/react
   ```
@@ -107,6 +109,71 @@
   }
   ```
 
--
--
+- Prepare Tailwind CSS
+
+  [reference](https://tailwindcss.com/docs/guides/nextjs)
+
+  1. Install Tailwind CSS
+
+     ```bash
+     npm install -D tailwindcss postcss autoprefixer
+     npx tailwindcss init -p
+     ```
+
+  2. Configure your template paths
+
+     tailwind.config.js
+
+     ```javascript
+     /** @type {import('tailwindcss').Config} */
+     module.exports = {
+       content: [
+         "./app/**/*.{js,ts,jsx,tsx,mdx}",
+         "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+         "./components/**/*.{js,ts,jsx,tsx,mdx}",
+
+         // Or if using `src` directory:
+         "./src/**/*.{js,ts,jsx,tsx,mdx}",
+       ],
+       theme: {
+         extend: {},
+       },
+       plugins: [],
+     };
+     ```
+
+  3. Add the Tailwind directives to your CSS
+
+     globals.css
+
+     ```css
+     @tailwind base;
+     @tailwind components;
+     @tailwind utilities;
+     ```
+
+  4. Start your build process
+
+     ```bash
+     npm run dev
+     ```
+
+  5. Start using Tailwind in your project
+
+     index.tsx
+
+     ```typescript
+     import { Button, Group } from "@mantine/core";
+
+     export default function IndexPage() {
+       return (
+         <Group mt={50} position="center">
+           <Button size="xl" className="text-red-400">
+             Welcome to Mantine!
+           </Button>
+         </Group>
+       );
+     }
+     ```
+
 -
