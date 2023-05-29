@@ -32,4 +32,12 @@ $cblack: black;
       box-shadow: none;
     }
   }
+
+  &.letter-spacing {
+    &:hover {
+      background-color: $cblack;
+      color: $cwhite;
+      letter-spacing: 3px;
+    }
+  }
 }
