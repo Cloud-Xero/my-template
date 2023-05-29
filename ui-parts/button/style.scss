@@ -15,9 +15,21 @@ $cblack: black;
   margin: 50px 0;
   transition: all 0.3s;
 
-  &.float {
+  &.float:hover {
+    background-color: $cblack;
+    color: $cwhite;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  &.filled {
+    background-color: $cblack;
+    color: $cwhite;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+
     &:hover {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      background-color: $cwhite;
+      color: $cblack;
+      box-shadow: none;
     }
   }
 }
