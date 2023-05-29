@@ -35,4 +35,12 @@
 .btn.shadow:hover {
   transform: translate(-2.5px, -2.5px);
   box-shadow: 5px 5px 0 0 black;
+}
+.btn.solid {
+  box-shadow: 2px 2px 0 0 black;
+  border-radius: 7px;
+}
+.btn.solid:hover {
+  box-shadow: none;
+  transform: translate(2px, 2px);
 }/*# sourceMappingURL=style.css.map */
